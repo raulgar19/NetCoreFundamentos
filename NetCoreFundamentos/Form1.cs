@@ -13,6 +13,13 @@ namespace NetCoreFundamentos
             this.txtNombre.Text = "Soy un texto nuevo!!";
             this.txtNombre.Width = 220;
             this.txtNombre.BackColor = Color.Peru;
+            string textoNumero = "888";
+            int numero = int.Parse(txtNombre.Text);
+            double otro = double.Parse(txtNombre.Text);
+            int mayor = 88;
+            short pequeño = (short) mayor;
+            string dato  = pequeño.ToString();
+            dato =  this.btnPulsar.ToString();
         }
     }
 }
