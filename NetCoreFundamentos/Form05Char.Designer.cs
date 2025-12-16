@@ -36,93 +36,93 @@
             label3 = new Label();
             txtPuntuacion = new TextBox();
             label4 = new Label();
-            btnRun = new Button();
+            btnAscii = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 21);
+            label1.Location = new Point(25, 22);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(68, 30);
             label1.TabIndex = 0;
             label1.Text = "Letras";
             // 
             // txtLetras
             // 
-            txtLetras.Location = new Point(25, 50);
+            txtLetras.Location = new Point(29, 56);
             txtLetras.Multiline = true;
             txtLetras.Name = "txtLetras";
-            txtLetras.Size = new Size(194, 84);
+            txtLetras.Size = new Size(280, 114);
             txtLetras.TabIndex = 1;
             // 
             // txtNumeros
             // 
-            txtNumeros.Location = new Point(311, 50);
+            txtNumeros.Location = new Point(425, 56);
             txtNumeros.Multiline = true;
             txtNumeros.Name = "txtNumeros";
-            txtNumeros.Size = new Size(194, 84);
+            txtNumeros.Size = new Size(280, 114);
             txtNumeros.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(311, 21);
+            label2.Location = new Point(421, 22);
             label2.Name = "label2";
-            label2.Size = new Size(56, 15);
+            label2.Size = new Size(98, 30);
             label2.TabIndex = 2;
             label2.Text = "Números";
             // 
             // txtSimbolos
             // 
-            txtSimbolos.Location = new Point(25, 185);
+            txtSimbolos.Location = new Point(29, 224);
             txtSimbolos.Multiline = true;
             txtSimbolos.Name = "txtSimbolos";
-            txtSimbolos.Size = new Size(194, 84);
+            txtSimbolos.Size = new Size(280, 114);
             txtSimbolos.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(25, 156);
+            label3.Location = new Point(25, 190);
             label3.Name = "label3";
-            label3.Size = new Size(56, 15);
+            label3.Size = new Size(97, 30);
             label3.TabIndex = 4;
             label3.Text = "Símbolos";
             // 
             // txtPuntuacion
             // 
-            txtPuntuacion.Location = new Point(311, 185);
+            txtPuntuacion.Location = new Point(425, 224);
             txtPuntuacion.Multiline = true;
             txtPuntuacion.Name = "txtPuntuacion";
-            txtPuntuacion.Size = new Size(194, 84);
+            txtPuntuacion.Size = new Size(280, 114);
             txtPuntuacion.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(311, 156);
+            label4.Location = new Point(421, 190);
             label4.Name = "label4";
-            label4.Size = new Size(68, 15);
+            label4.Size = new Size(118, 30);
             label4.TabIndex = 6;
             label4.Text = "Puntuación";
             // 
-            // btnRun
+            // btnAscii
             // 
-            btnRun.Location = new Point(204, 296);
-            btnRun.Name = "btnRun";
-            btnRun.Size = new Size(127, 41);
-            btnRun.TabIndex = 8;
-            btnRun.Text = "Run ASCII";
-            btnRun.UseVisualStyleBackColor = true;
-            btnRun.Click += btnRun_Click;
+            btnAscii.Location = new Point(272, 384);
+            btnAscii.Name = "btnAscii";
+            btnAscii.Size = new Size(175, 53);
+            btnAscii.TabIndex = 8;
+            btnAscii.Text = "Run ASCII";
+            btnAscii.UseVisualStyleBackColor = true;
+            btnAscii.Click += btnAscii_Click;
             // 
             // Form05Char
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(531, 402);
-            Controls.Add(btnRun);
+            ClientSize = new Size(756, 487);
+            Controls.Add(btnAscii);
             Controls.Add(txtPuntuacion);
             Controls.Add(label4);
             Controls.Add(txtSimbolos);
@@ -131,6 +131,8 @@
             Controls.Add(label2);
             Controls.Add(txtLetras);
             Controls.Add(label1);
+            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(5, 6, 5, 6);
             Name = "Form05Char";
             Text = "Form05Char";
             ResumeLayout(false);
@@ -147,6 +149,6 @@
         private Label label3;
         private TextBox txtPuntuacion;
         private Label label4;
-        private Button btnRun;
+        private Button btnAscii;
     }
 }

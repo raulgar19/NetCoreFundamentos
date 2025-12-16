@@ -15,17 +15,17 @@ namespace NetCoreFundamentos
             InitializeComponent();
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+        private void btnAscii_Click(object sender, EventArgs e)
         {
             for (int i = 0; i <= 255; i++)
             {
-                char caracter = (char) i;
-
+                //CONVERTIMOS CADA NUMERO A SU CHAR CORRESPONDIENTE
+                char caracter = (char)i;
                 if (char.IsLetter(caracter) == true)
                 {
                     this.txtLetras.Text = this.txtLetras.Text + caracter;
                 }
-                else if (char.IsNumber(caracter) == true) 
+                else if (char.IsNumber(caracter) == true)
                 {
                     this.txtNumeros.Text += caracter;
                 }
