@@ -18,15 +18,24 @@ namespace NetCoreFundamentos
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            string producto = this.txtProducto.Text;
-            this.lstTienda.Items.Add(producto);
+            string producto = this.txtProducto.Text.ToUpper();
+            int index = this.lstTienda.Items.IndexOf(producto);
+            if (index == -1)
+            {
+                this.lstTienda.Items.Add(producto);
+                this.txtProducto.Focus();
+                this.txtProducto.SelectAll();
+            }
+            else
+            {
+                this.lstTienda.SelectedIndex = index;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int numProductos = this.lstTienda.SelectedItems.Count - 1;
-
-            for (int i = numProductos; i >= 0; i--)
+            int numProductos = this.lstTienda.SelectedItems.Count;
+            for (int i = numProductos - 1; i >= 0; i--)
             {
                 int index = this.lstTienda.SelectedIndices[i];
                 this.lstTienda.Items.RemoveAt(index);
@@ -40,47 +49,61 @@ namespace NetCoreFundamentos
 
         private void btnSeleccion_Click(object sender, EventArgs e)
         {
-            int numProductos = this.lstTienda.SelectedItems.Count - 1;
-
-            for (int i = numProductos; i >= 0; i--)
+            int numProductos = this.lstTienda.SelectedItems.Count;
+            for (int i = numProductos - 1; i >= 0; i--)
             {
-                string item = this.lstTienda.SelectedItems[i].ToString();
-                this.lstAlmacen.Items.Add(item);
+                int index = this.lstTienda.SelectedIndices[i];
+                string producto = this.lstTienda.SelectedItems[i].ToString();
+                this.lstAlmacen.Items.Add(producto);
+                this.lstTienda.Items.RemoveAt(index);
             }
         }
 
         private void btnTodos_Click(object sender, EventArgs e)
         {
-            foreach (string item in this.lstTienda.Items)
-            {
-                this.lstAlmacen.Items.Add(item);
-            }
+            this.lstAlmacen.Items.AddRange(this.lstTienda.Items);
+            this.lstTienda.Items.Clear();
+
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
         {
-            if (lstAlmacen.SelectedIndex > 0)
-            {
-                int index = lstAlmacen.SelectedIndex;
-                object item = lstAlmacen.SelectedItem;
-                
-                lstAlmacen.Items.RemoveAt(index);
-                lstAlmacen.Items.Insert(index - 1, item);
-                lstAlmacen.SelectedIndex = index - 1;
-            }
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index - 1, producto);
+            this.lstAlmacen.SelectedIndex = index - 1;
         }
 
         private void btnBajar_Click(object sender, EventArgs e)
         {
-            if (lstAlmacen.SelectedIndex >= 0 && lstAlmacen.SelectedIndex < lstAlmacen.Items.Count - 1)
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index + 1, producto);
+            this.lstAlmacen.SelectedIndex = index + 1;
+        }
+
+        private void lstAlmacen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            if (index == 0)
             {
-                int index = lstAlmacen.SelectedIndex;
-                object item = lstAlmacen.SelectedItem;
-                
-                lstAlmacen.Items.RemoveAt(index);
-                lstAlmacen.Items.Insert(index + 1, item);
-                lstAlmacen.SelectedIndex = index + 1;
+                this.btnSubir.Enabled = false;
             }
+            else
+            {
+                this.btnSubir.Enabled = true;
+            }
+            if (index == this.lstAlmacen.Items.Count - 1)
+            {
+                this.btnBajar.Enabled = false;
+            }
+            else
+            {
+                this.btnBajar.Enabled = true;
+            }
+
         }
     }
 }

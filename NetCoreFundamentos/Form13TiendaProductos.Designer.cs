@@ -162,6 +162,7 @@
             lstAlmacen.Name = "lstAlmacen";
             lstAlmacen.Size = new Size(150, 184);
             lstAlmacen.TabIndex = 13;
+            lstAlmacen.SelectedIndexChanged += lstAlmacen_SelectedIndexChanged;
             // 
             // Form13TiendaProductos
             // 
